@@ -1,0 +1,83 @@
+<html>
+
+    <head>
+        <style>
+            body {margin: 0; padding: 0;}
+            #mainCanvas { position:absolute; }
+            #console { position:absolute; left: 66%; width: 34%; height: 100%; }
+            #console #code {height: 80%; width: 100%; }
+        </style>
+        
+        
+        
+    </head>
+
+    <body>
+        <canvas id="mainCanvas"></canvas>
+        <div id="console">
+            <textarea id="code">
+            
+var a = vec(100,100);
+var b = vec(100,400);
+var c = vec(400,100);
+var d = vec(400,400);
+
+var e = vec.mid(a, b);
+var f = vec.mid(c, d);
+
+var x = vec.mid(e, f);
+
+
+render.sketch();
+render.pt(a, b, c, d, e, f);
+render.solid();
+render.pt(x);
+            
+            </textarea>
+            <button id="go"></textarea>
+        </div>
+    
+    </body>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>        
+    <script language="javascript" src="js/arches.js"></script>
+    <script language="javascript" src="js/render.js"></script>        
+        
+    <script language="javascript" id="layout">
+    
+        function resize()
+        {
+            console.log("resize");
+            var w = Math.floor(0.7 * $("body").width());
+            var h = $("body").height();
+            console.log(w + ", " + h)
+            
+            render.canvas.width = w;
+            render.canvas.height = h;
+            //$("#mainCanvas").width(w);
+            //$("#mainCanvas").height(h); 
+        }
+        
+        $(window).resize(resize);  
+    </script>        
+        
+    <script language="javascript">
+        function go()
+        {   
+            render.script($("#code").val());
+        
+        }
+        
+        $(document).ready(function() {
+        
+            render.init("mainCanvas");
+        
+            resize();
+            
+            $("#go").click(go);
+            go();
+            
+        });
+    </script>
+
+</html>
