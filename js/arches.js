@@ -36,13 +36,13 @@ vec.mid = function(v1, v2) { return { x: num.mid(v1.x, v2.x), y: num.mid(v1.y, v
 
 vec.mag = function(v) { return Math.sqrt(v.x*v.x + v.y*v.y); }
 
-vec.scale = function(v, n) { return { x: v.x/n, y: v.y/n }; }
+vec.scale = function(v, n) { return { x: v.x*n, y: v.y*n }; }
 
 vec.normalize = function(v) { return vec.scale(v, 1/vec.mag(v)); }
 
-vec.add = function(v1, v2) { return { x : v2.x + v1.x, y: v2.y + v1.y }; }
+vec.add = function(v1, v2) { return { x : v1.x + v2.x, y: v1.y + v2.y }; }
 
-vec.sub = function(v1, v2) { return { x : v2.x - v1.x, y: v2.y - v1.y }; }
+vec.sub = function(v1, v2) { return { x : v1.x - v2.x, y: v1.y - v2.y }; }
     
 vec.dot = function(v1, v2) { return v1.x*v2.x + v1.y*v2.y; }
 
@@ -54,13 +54,15 @@ vec.onto.line = function(p, l)
     return vec.add(l.p, vec.scale(l.v, t) );   
 }
 
-                  /*
 
-var line = function(p, v) { return {p: p, v: v} ; }
+
+var line = function(p, v) { return {p: p, v: vec.normalize(v) } ; }
 
 line.points = function (p1, p2) { return { p: p1, v: vec.normalize(vec.sub(p2, p1)) }; }
+
+line.pointat = function(l, t) { return { x : l.p.x + l.v.x * t, y: l.p.y + l.v.y * t }; }
 
 
 
 var segment = function(p1, p2) { return { l: line.point(p1, p2), p1: p1, p2: p2 };}
-          */
+

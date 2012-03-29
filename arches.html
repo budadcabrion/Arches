@@ -27,9 +27,13 @@ var f = vec.mid(c, d);
 
 var x = vec.mid(e, f);
 
+var l1 = line.points(a, b);
+var l2 = line.points(c, d);
+
 
 render.sketch();
 render.pt(a, b, c, d, e, f);
+render.line(l1, l2);
 render.solid();
 render.pt(x);
             
