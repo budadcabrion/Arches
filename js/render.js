@@ -50,7 +50,7 @@ render.pt = function(args)
     {
         var p = arguments[i];
         context.beginPath();
-        context.rect(p.x - 1, p.y - 1, 3, 3);
+        context.rect(p.x - 2, p.y - 2, 5, 5);
         context.fill();
     }
 }

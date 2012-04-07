@@ -17,25 +17,38 @@
         <div id="console">
             <textarea id="code">
             
-var a = vec(100,100);
-var b = vec(100,400);
-var c = vec(400,100);
-var d = vec(400,400);
+            
+            
+var a = make(vec,100,100);
+var b = make(vec,100,400);
+var c = make(vec,400,100);
+var d = make(vec,400,400);
 
-var e = vec.mid(a, b);
-var f = vec.mid(c, d);
+var e = make(vec.mid,a, b);
+var f = make(vec.mid,c, d);
 
-var x = vec.mid(e, f);
 
-var l1 = line.points(a, b);
-var l2 = line.points(c, d);
+var l1 = make(line.points,a, d);
+var l2 = make(line.points,c, b);
 
+
+var x = make(vec.intersect.lines,l1,l2);
+
+var y = make(vec.onto.line, f, l1);
+var z = make(vec.onto.line, f, l2);
+
+var lb = make(line.perp.bisector, f, b);
 
 render.sketch();
 render.pt(a, b, c, d, e, f);
-render.line(l1, l2);
+render.line(l1, l2, lb);
 render.solid();
-render.pt(x);
+render.pt(x, y, z);
+            
+            
+            
+            
+            
             
             </textarea>
             <button id="go"></textarea>
@@ -44,8 +57,9 @@ render.pt(x);
     </body>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>        
-    <script language="javascript" src="js/arches.js"></script>
-    <script language="javascript" src="js/render.js"></script>        
+    <script language="javascript" src="js/arches.js"></script>  
+    <script language="javascript" src="js/make.js"></script>       
+    <script language="javascript" src="js/render.js"></script>  
         
     <script language="javascript" id="layout">
     

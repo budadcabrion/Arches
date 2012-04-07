@@ -65,9 +65,14 @@ Arches
 1=js\arches.js
 2=js\render.js
 3=arches.html
+4=..\..\AppData\Local\Temp\PSpad\kula\admin\EditImages.php
+5=..\..\AppData\Local\Temp\PSpad\kula\admin\EditPromotion.php
+6=..\..\AppData\Local\Temp\PSpad\kula\admin\EditImagesFunctions.php
+7=..\..\AppData\Local\Temp\PSpad\kula\xml\home_promotion.php
+8=..\..\AppData\Local\Temp\PSpad\kula\xml\retreats.php
 [Selected Project Files]
 Main=
-Selected=js\render.js
+Selected=..\..\AppData\Local\Temp\PSpad\kula\xml\home_promotion.php
 [js\shortcuts.js]
 TopLine=1
 Caret=1,3
@@ -80,3 +85,18 @@ Caret=32,28
 [arches.html]
 TopLine=17
 Caret=21,36
+[..\..\AppData\Local\Temp\PSpad\kula\admin\EditImages.php]
+TopLine=1
+Caret=18,10
+[..\..\AppData\Local\Temp\PSpad\kula\admin\EditPromotion.php]
+TopLine=21
+Caret=94,65
+[..\..\AppData\Local\Temp\PSpad\kula\admin\EditImagesFunctions.php]
+TopLine=1
+Caret=41,18
+[..\..\AppData\Local\Temp\PSpad\kula\xml\home_promotion.php]
+TopLine=15
+Caret=44,25
+[..\..\AppData\Local\Temp\PSpad\kula\xml\retreats.php]
+TopLine=1
+Caret=1,6
